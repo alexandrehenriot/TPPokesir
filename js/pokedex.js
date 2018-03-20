@@ -20,20 +20,23 @@ pokeApp.config(['$resourceProvider', function($resourceProvider) {
 pokeApp.controller('RecherchePokemon', ['$scope',
     function($scope) {
         $scope.majPokemon= {
-            model: 1,
             pokemons:[
-                {id: 1, name: 'Bulbizarre', type: 'Plante', niveau: 12},
-                {id: 2, name: 'Reptincelle', type: 'Feu', niveau: 23},
-                {id: 3, name: 'Pikachu', type: 'Electricité', niveau: 49},
-                {id: 4, name: 'Magicarpe', type: 'Normal', niveau: 78},
-                {id: 5, name: 'Newtwo', type: 'Psy', niveau: 99}
+                {id: 0, name: 'Bulbizarre', type: 'Plante', niveau: 12},
+                {id: 1, name: 'Reptincelle', type: 'Feu', niveau: 23},
+                {id: 2, name: 'Pikachu', type: 'Electricité', niveau: 49},
+                {id: 3, name: 'Magicarpe', type: 'Normal', niveau: 78},
+                {id: 4, name: 'Newtwo', type: 'Psy', niveau: 99}
             ]
         };
+
+        $scope.getInfosPokemon= function(value){
+            return $scope.pokemons.get(value).name + " du type " + $scope.pokemons.get(value).type + " et de niveau " + $scope.pokemons.get(value).niveau;
+        }
 
 
 
         $scope.donnerbonbon = function() {
-            $scope.pokemon.forEach(function(el) {
+            $scope.pokemons.forEach(function(el) {
                 el.niveau = el.niveau + 1;
             });
         };

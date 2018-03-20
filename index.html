@@ -25,15 +25,16 @@
 
         <!--Search-->
         <div ng-controller="RecherchePokemon">
-            <select ng-model="majPokemon.model">
+            <select ng-model="pokemonmodel">
                 <option ng-repeat="pokemon in majPokemon.pokemons" value="{{pokemon.id}}">{{pokemon.name}}</option>
             </select>
+            <p>{{pokemonmodel}}</p>
         </div>
 
 
 		<!-- Pokémon information -->
 		<div>
-            <p>{{majPokemon.model}}<span ng-bind="pokemons.id()"></span> </p>
+
         </div>
 
 	</div>
