@@ -7,11 +7,10 @@ pokeApp.config(['$resourceProvider', function($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
-angular.module('getterSetterExample', [])
-    .controller('ExampleController', ['$scope',
+pokeApp.controller('ExampleController', ['$scope',
         function($scope) {
-    var _name = Brian;
-    $scope.user = {
+    var _name = "Brian";
+    $scope.pokemon = {
         name: function(newName) {
             // Note that newName can be undefined for two reasons:
             // 1. Because it is called as a getter and thus called with no arguments
