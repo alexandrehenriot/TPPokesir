@@ -19,6 +19,9 @@ pokeApp.config(['$resourceProvider', function($resourceProvider) {
 
 pokeApp.controller('RecherchePokemon', ['$scope',
     function($scope) {
+
+        var idPokemonSelectionne="";
+
         $scope.majPokemon= {
             pokemonmodel:"0",
             pokemons:[
@@ -30,11 +33,9 @@ pokeApp.controller('RecherchePokemon', ['$scope',
             ]
         };
 
-        $scope.getInfosPokemon= function(value){
-            return $scope.pokemons.get(value).name + " du type " + $scope.pokemons.get(value).type + " et de niveau " + $scope.pokemons.get(value).niveau;
-        }
-
-
+        $scope.clickEvent = function(id){
+            $scope.idPokemonSelectionne=id;
+        };
 
         $scope.donnerbonbon = function() {
             $scope.pokemons.forEach(function(el) {
