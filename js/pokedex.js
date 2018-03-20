@@ -20,6 +20,7 @@ pokeApp.config(['$resourceProvider', function($resourceProvider) {
 pokeApp.controller('RecherchePokemon', ['$scope',
     function($scope) {
         $scope.majPokemon= {
+            pokemonmodel:"0",
             pokemons:[
                 {id: 0, name: 'Bulbizarre', type: 'Plante', niveau: 12},
                 {id: 1, name: 'Reptincelle', type: 'Feu', niveau: 23},
