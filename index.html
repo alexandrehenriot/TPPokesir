@@ -12,20 +12,28 @@
 	<div class="container">
 		<h1>Pokésir</h1>
 
-        <div ng-controller="ExampleController">
-		<!-- Search -->
-        <form name="userForm">
-            <label>Nom:
-                <input type="text" name="pokemonName"
-                       ng-model="pokemon.name"
-                       ng-model-options="{ getterSetter: true }" />
-            </label>
-        </form>
-        <pre>Nom = {{pokemon.name}} <span ng-bind="pokemon.name()"></span></pre>
+        <!--<div ng-controller="ExampleController">-->
+        <!--<form name="userForm">-->
+            <!--<label>Id:-->
+                <!--<input type="text" name="pokemonId"-->
+                       <!--ng-model="pokemon.id"-->
+                       <!--ng-model-options="{ getterSetter: true }" />-->
+            <!--</label>-->
+        <!--</form>-->
+        <!--<pre>Id = {{pokemon.id}} <span ng-bind="pokemon.id()"></span></pre>-->
+        <!--</div>-->
+
+        <!--Search-->
+        <div ng-controller="RecherchePokemon">
+            <select ng-model="majPokemon.model">
+                <option ng-repeat="pokemon in majPokemon.pokemons" value="{{pokemon.id}}">{{pokemon.name}}</option>
+            </select>
         </div>
+
+
 		<!-- Pokémon information -->
 		<div>
-
+            <p>{{majPokemon.model}}<span ng-bind="pokemons.id()"></span> </p>
         </div>
 
 	</div>

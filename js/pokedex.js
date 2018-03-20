@@ -7,16 +7,36 @@ pokeApp.config(['$resourceProvider', function($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
-pokeApp.controller('ExampleController', ['$scope',
-        function($scope) {
-    var _name = "Brian";
-    $scope.pokemon = {
-        name: function(newName) {
-            // Note that newName can be undefined for two reasons:
-            // 1. Because it is called as a getter and thus called with no arguments
-            // 2. Because the property should actually be set to undefined. This happens e.g. if the
-            //    input is invalid
-            return arguments.length ? (_name = newName) : _name;
-        }
-    };
-}]);
+// pokeApp.controller('ExampleController', ['$scope',
+//         function($scope) {
+//     var _id = '1';
+//     $scope.pokemon = {
+//         id: function(newId) {
+//             return arguments.length ? (_id = newId) : _id;
+//         }
+//     };
+// }]);
+
+pokeApp.controller('RecherchePokemon', ['$scope',
+    function($scope) {
+        $scope.majPokemon= {
+            model: 1,
+            pokemons:[
+                {id: 1, name: 'Bulbizarre', type: 'Plante', niveau: 12},
+                {id: 2, name: 'Reptincelle', type: 'Feu', niveau: 23},
+                {id: 3, name: 'Pikachu', type: 'Electricité', niveau: 49},
+                {id: 4, name: 'Magicarpe', type: 'Normal', niveau: 78},
+                {id: 5, name: 'Newtwo', type: 'Psy', niveau: 99}
+            ]
+        };
+
+
+
+        $scope.donnerbonbon = function() {
+            $scope.pokemon.forEach(function(el) {
+                el.niveau = el.niveau + 1;
+            });
+        };
+
+
+    }]);
